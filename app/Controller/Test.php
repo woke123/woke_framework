@@ -13,9 +13,6 @@ class Test extends Controller
         //db functions
          $user = db('users')->get(['email'],['id' => 1]);
 
-        //model class
-        //$user = User::get(['email'],['id' => 1]);
-
         //$User = new User();
         //$user = $User->findByIdInfo(1);
 
