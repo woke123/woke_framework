@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+require_once('init.php');
+
+try {
+    $class      = ucfirst($argv[1]);
+    $method     = $argv[2];
+    $obj        = __CLI__ . $class;
+    $class      = new $obj();
+    $params     = $argv;
+    unset($params[0],$params[1],$params[2]);
+    $value      = array_values($params);
+    $class->{$method}($value);
+} catch (\Exception $e) {
+  echo $e->getMessage();
+}
