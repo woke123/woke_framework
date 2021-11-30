@@ -8,14 +8,12 @@
 
 namespace App\Model;
 
-use Core\Model;
-
-class User extends Model
+class User extends \Core\Model
 {
      public $table = 'users';
 
-     public function findByIdInfo($id)
+     public static function findByIdInfo($id)
      {
-         return $this->get(['email'],['id' => $id]);
+         return self::get(['email'],['id' => $id]);
      }
 }

@@ -8,11 +8,15 @@
 
 namespace App\Cli;
 
+use App\Services\TestService;
+
 class Test
 {
+    // php artisan test run date=2021
     public function run($params)
     {
-        config('app.test');
-        var_dump($params);exit;
+        // demo
+         $user = (new TestService())->test(1);
+         var_dump($user);
     }
 }

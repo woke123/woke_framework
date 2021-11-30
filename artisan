@@ -8,9 +8,10 @@ try {
     $method     = $argv[2];
     $obj        = __CLI__ . $class;
     $class      = new $obj();
-    $params     = $argv;
-    unset($params[0],$params[1],$params[2]);
-    $value      = array_values($params);
+    $value      = null;
+    if (!empty($argv[3])) {
+        parse_str($argv[3],$value);
+    }
     $class->{$method}($value);
 } catch (\Exception $e) {
   echo $e->getMessage();

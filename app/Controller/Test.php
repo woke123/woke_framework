@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use Core\Controller;
-use App\Model\User;
+use App\Services\TestService;
 
 class Test extends Controller
 {
@@ -11,7 +11,10 @@ class Test extends Controller
     public function lists()
     {
         //db functions
-         $user = db('users')->get(['email'],['id' => 1]);
+        // $user = db('users')->get(['email'],['id' => 1]);
+
+        $user = (new TestService())->test(1);
+        var_dump($user);
 
         //$User = new User();
         //$user = $User->findByIdInfo(1);

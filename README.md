@@ -4,7 +4,7 @@
 http://host/controller/method?params=
 
 #console
-php artisan class method params
+php artisan class method date=2021
 
 #获取参数
 input('get.');
